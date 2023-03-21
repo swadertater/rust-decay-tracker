@@ -1,0 +1,10 @@
+<div class="container">
+  <button mat-raised-button (click)="addTimer()">Add Timer</button>
+  <div class="d-flex flex-column justify-content-center w-100">
+    <div *ngFor="let timer of timers" class="d-flex">
+      <h1>{{timer.id}}</h1>
+      <app-timer></app-timer>
+      <button color="primary" mat-icon-button (click)="deleteTimer(timer.id)"><mat-icon>delete</mat-icon></button>
+    </div>
+  </div>
+</div>
