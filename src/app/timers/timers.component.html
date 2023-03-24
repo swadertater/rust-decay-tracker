@@ -1,10 +1,32 @@
 <div class="container">
-  <button mat-raised-button (click)="addTimer()">Add Timer</button>
-  <div class="d-flex flex-column justify-content-center w-100">
-    <div *ngFor="let timer of timers" class="d-flex">
-      <h1>{{timer.id}}</h1>
-      <app-timer></app-timer>
-      <button color="primary" mat-icon-button (click)="deleteTimer(timer.id)"><mat-icon>delete</mat-icon></button>
-    </div>
+  <mat-card>
+    <mat-card-content>
+      <form (submit)="onSubmit($event)">
+        <mat-form-field>
+          <input matInput placeholder="Timer Name" formControlName="name" name="timerName">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput type="text" formControlName="health">
+        </mat-form-field>
+        <mat-select formControlName="buildingTier">
+          <mat-option *ngFor="let option of buildingTierOptions" [value]="option.value">{{option.label}}</mat-option>
+        </mat-select>
+        <mat-select formControlName="buildingCOmponent">
+          <mat-option *ngFor="let option of buildingComponentOptions"
+                      [value]="option.value">{{option.label}}</mat-option>
+        </mat-select>
+        <mat-form-field>
+          <textarea matInput placeholder="Notes" formControlName="notes"></textarea>
+        </mat-form-field>
+        <button mat-raised-button>Add Timer</button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+  <div class="d-flex justify-content-center" *ngFor="let timer of timers">
+    <span>{{timer.id}}</span>
+    <app-timer></app-timer>
+    <button color="primary" mat-icon-button (click)="deleteTimer(timer.id)">
+      <mat-icon>delete</mat-icon>
+    </button>
   </div>
 </div>

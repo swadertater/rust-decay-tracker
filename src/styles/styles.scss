@@ -2,6 +2,7 @@
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
 @use '@angular/material' as mat;
+@use 'bootstrap' as *;
 @use './red-theme.scss' as *;
 @use './gray-theme.scss' as *;
 // Plus imports for other components in your app.
@@ -14,8 +15,8 @@
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$rust-decay-tracker-primary: mat.define-palette($red);
-$rust-decay-tracker-accent: mat.define-palette($gray);
+$rust-decay-tracker-primary: mat.define-palette($rust-red);
+$rust-decay-tracker-accent: mat.define-palette($rust-gray);
 
 // The warn palette is optional (defaults to red).
 $rust-decay-tracker-warn: mat.define-palette(mat.$red-palette);
@@ -37,7 +38,7 @@ $rust-decay-tracker-theme: mat.define-light-theme((
 
 /* You can add global styles to this file, and also import other style files */
 
-html, body { 
+html, body {
   height: 100%;
   background-color: #2e3133;
   color: white;
