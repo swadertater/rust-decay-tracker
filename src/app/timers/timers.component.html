@@ -1,25 +1,7 @@
-<div class="container">
+<div class="container p-5">
   <mat-card>
     <mat-card-content>
-      <form (submit)="onSubmit($event)">
-        <mat-form-field>
-          <input matInput placeholder="Timer Name" formControlName="name" name="timerName">
-        </mat-form-field>
-        <mat-form-field>
-          <input matInput type="text" formControlName="health">
-        </mat-form-field>
-        <mat-select formControlName="buildingTier">
-          <mat-option *ngFor="let option of buildingTierOptions" [value]="option.value">{{option.label}}</mat-option>
-        </mat-select>
-        <mat-select formControlName="buildingCOmponent">
-          <mat-option *ngFor="let option of buildingComponentOptions"
-                      [value]="option.value">{{option.label}}</mat-option>
-        </mat-select>
-        <mat-form-field>
-          <textarea matInput placeholder="Notes" formControlName="notes"></textarea>
-        </mat-form-field>
-        <button mat-raised-button>Add Timer</button>
-      </form>
+      <app-timer-form></app-timer-form>
     </mat-card-content>
   </mat-card>
   <div class="d-flex justify-content-center" *ngFor="let timer of timers">

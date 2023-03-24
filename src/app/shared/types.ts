@@ -10,7 +10,7 @@ export enum BuildingTier {
   Wood,
   Stone,
   SheetMetal,
-  Armored
+  Armoured
 }
 
 export enum BuildingComponent {

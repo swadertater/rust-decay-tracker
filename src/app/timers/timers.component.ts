@@ -1,6 +1,4 @@
-import { Component } from '@angular/core';
-import {BuildingComponent, BuildingTier, Options} from '../shared/types';
-import {FormBuilder} from "@angular/forms";
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-timers',
@@ -10,21 +8,7 @@ import {FormBuilder} from "@angular/forms";
 export class TimersComponent {
   public timers: TimerData[] = [];
 
-  public buildingTierOptions: Options<BuildingTier> = [
-    {value: BuildingTier.Wood, label: 'Wood'},
-    {value: BuildingTier.Stone, label: 'Stone'},
-    {value: BuildingTier.SheetMetal, label: 'Metal'},
-    {value: BuildingTier.Armored, label: 'Armored'},
-  ];
-
-  public buildingComponentOptions: Options<BuildingComponent> = [
-    {value: BuildingComponent.Wall, label: 'Wall'},
-    {value: BuildingComponent.Ceiling, label: 'Ceiling'},
-    {value: BuildingComponent.Foundation, label: 'Foundation'},
-    {value: BuildingComponent.Stairs, label: 'Stairs'},
-  ];
-
-  constructor(private fb: FormBuilder){
+  constructor() {
 
   }
 
@@ -34,10 +18,6 @@ export class TimersComponent {
 
   public deleteTimer(id: number): void {
     this.timers = this.timers.filter(timer => timer.id !== id);
-  }
-
-  onSubmit($event: SubmitEvent) {
-    console.log('EVENT: ', $event)
   }
 }
 
