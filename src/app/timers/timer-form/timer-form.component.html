@@ -1,0 +1,101 @@
+<form (submit)="onSubmit($event)" [formGroup]="form" class="container-fluid">
+  <div class="row">
+    <div class="col">
+      <mat-form-field>
+        <mat-label>Label</mat-label>
+        <input matInput placeholder="Label" formControlName="label" name="label">
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <mat-form-field>
+        <mat-label>X</mat-label>
+        <mat-select formControlName="x">
+          <mat-option *ngFor="let option of X_OPTIONS" [value]="option.value">
+            {{option.label}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="col">
+      <mat-form-field>
+        <mat-label>Y</mat-label>
+        <mat-select formControlName="y">
+          <mat-option *ngFor="let option of Y_OPTIONS" [value]="option.value">
+            {{option.label}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <mat-form-field>
+        <mat-label>Health</mat-label>
+        <input matInput type="number" formControlName="health">
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <mat-form-field>
+        <mat-label>Building Tier</mat-label>
+        <mat-select formControlName="buildingTier">
+          <mat-option [value]="BuildingTier.Twig">
+            <img src="/assets/images/building-tiers/wood.png" alt="Twig Building Tier" width="32" height="32">
+            Twig
+          </mat-option>
+          <mat-option [value]="BuildingTier.Wood">
+            <img src="/assets/images/building-tiers/wood.png" alt="Wood Building Tier" width="32" height="32">
+            Wood
+          </mat-option>
+
+          <mat-option [value]="BuildingTier.Stone">
+            <img src="/assets/images/building-tiers/stone.png" alt="Stone Building Tier" width="32" height="32">
+            Stone
+          </mat-option>
+          <mat-option [value]="BuildingTier.SheetMetal">
+            <img src="/assets/images/building-tiers/metal-fragments.png" alt="Sheet Metal Building Tier" width="32"
+                 height="32">
+            Sheet Metal
+          </mat-option>
+          <mat-option [value]="BuildingTier.Armoured">
+            <img src="/assets/images/building-tiers/high-quality-metal.png" alt="Armoured Building Tier" width="32"
+                 height="32">
+            Armoured
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <mat-form-field>
+        <mat-label>Building Component</mat-label>
+        <mat-select formControlName="buildingComponent">
+          <mat-option *ngFor="let option of BUILDING_COMPONENT_OPTIONS"
+                      [value]="option.value">
+            {{option.label}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <mat-form-field>
+        <mat-label>Notes</mat-label>
+        <textarea matInput placeholder="Notes" formControlName="notes"></textarea>
+      </mat-form-field>
+    </div>
+  </div>
+  <button class="mx-2" color="primary" mat-raised-button type="submit">
+    <mat-icon>add</mat-icon>
+    Add Timer
+  </button>
+  <button (click)="form.reset()" class="mx-2" color="warn" mat-raised-button type="button">
+    <mat-icon>restart_alt</mat-icon>
+    Reset
+  </button>
+</form>
