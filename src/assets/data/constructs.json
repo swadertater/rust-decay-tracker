@@ -1,0 +1,194 @@
+[
+  {
+    "name": "Armored Door",
+    "maxHp": 1000,
+    "decay": 43200,
+    "image": "/assets/images/building-constructs/door-hinged-toptier.png"
+  },
+  {
+    "name": "Armored Double Door",
+    "maxHp": 1000,
+    "decay": 43200,
+    "image": "/assets/images/building-constructs/door-double-hinged-toptier.png"
+  },
+  {
+    "name": "Barbed Wooden Barricade",
+    "maxHp": 400,
+    "decay": 28800,
+    "image": "/assets/images/building-constructs/barricade-woodwire.png"
+  },
+  {
+    "name": "Chainlink Fence",
+    "maxHp": 100,
+    "decay": 28800,
+    "image": "/assets/images/building-constructs/wall-frame-fence.png"
+  },
+  {
+    "name": "Chainlink Fence Gate",
+    "maxHp": 75,
+    "decay": 28800,
+    "image": "/assets/images/building-constructs/wall-frame-fence-gate.png"
+  },
+  {
+    "name": "Floor grill",
+    "maxHp": 250,
+    "decay": 28800,
+    "image": "/assets/images/building-constructs/floor-grill.png"
+  },
+  {
+    "name": "Floor triangle grill",
+    "maxHp": 250,
+    "decay": 28800,
+    "image": "/assets/images/building-constructs/floor-triangle-grill.png"
+  },
+  {
+    "name": "Garage Door",
+    "maxHp": 600,
+    "decay": 28800,
+    "image": "/assets/images/building-constructs/wall-frame-garagedoor.png"
+  },
+  {
+    "name": "High External Stone Gate",
+    "maxHp": 500,
+    "decay": 28800,
+    "image": "/assets/images/building-constructs/gates-external-high-stone.png"
+  },
+  {
+    "name": "High External Stone Wall",
+    "maxHp": 500,
+    "decay": 28800,
+    "image": "/assets/images/building-constructs/wall-external-high-stone.png"
+  },
+  {
+    "name": "High External Wooden Gate",
+    "maxHp": 500,
+    "decay": 28800,
+    "image": "/assets/images/building-constructs/gates-external-high-wood.png"
+  },
+  {
+    "name": "High External Wooden Wall",
+    "maxHp": 500,
+    "decay": 28800,
+    "image": "/assets/images/building-constructs/wall-external-high.png"
+  },
+  {
+    "name": "High Ice Wall",
+    "maxHp": 500,
+    "decay": 28800,
+    "image": "/assets/images/building-constructs/wall-external-high-ice.png"
+  },
+  {
+    "name": "Ladder Hatch",
+    "maxHp": 250,
+    "decay": 28800,
+    "image": "/assets/images/building-constructs/floor-ladder-hatch.png"
+  },
+  {
+    "name": "Metal Barricade",
+    "maxHp": 600,
+    "decay": 28800,
+    "image": "/assets/images/building-constructs/metal-barricade.png"
+  },
+  {
+    "name": "Metal Shop Front",
+    "maxHp": 750,
+    "decay": 28800,
+    "image": "/assets/images/building-constructs/wall-frame-shopfront-metal.png"
+  },
+  {
+    "name": "Metal Vertical embrasure",
+    "maxHp": 500,
+    "decay": 28800,
+    "image": "/assets/images/building-constructs/shutter-metal-embrasure-b.png"
+  },
+  {
+    "name": "Metal Window Bars",
+    "maxHp": 500,
+    "decay": 28800,
+    "image": "/assets/images/building-constructs/wall-window-bars-metal.png"
+  },
+  {
+    "name": "Metal horizontal embrasure",
+    "maxHp": 500,
+    "decay": 28800,
+    "image": "/assets/images/building-constructs/shutter-metal-embrasure-a.png"
+  },
+  {
+    "name": "Prison Cell Gate",
+    "maxHp": 300,
+    "decay": 28800,
+    "image": "/assets/images/building-constructs/wall-frame-cell-gate.png"
+  },
+  {
+    "name": "Prison Cell Wall",
+    "maxHp": 300,
+    "decay": 28800,
+    "image": "/assets/images/building-constructs/wall-frame-cell.png"
+  },
+  {
+    "name": "Reinforced Glass Window",
+    "maxHp": 500,
+    "decay": 43200,
+    "image": "/assets/images/building-constructs/wall-window-bars-toptier.png"
+  },
+  {
+    "name": "Sheet Metal Door",
+    "maxHp": 250,
+    "decay": 28800,
+    "image": "/assets/images/building-constructs/door-hinged-metal.png"
+  },
+  {
+    "name": "Sheet Metal Double Door",
+    "maxHp": 250,
+    "decay": 28800,
+    "image": "/assets/images/building-constructs/door-double-hinged-metal.png"
+  },
+  {
+    "name": "Shop Front",
+    "maxHp": 500,
+    "decay": 10800,
+    "image": "/assets/images/building-constructs/wall-frame-shopfront.png"
+  },
+  {
+    "name": "Triangle Ladder Hatch",
+    "maxHp": 250,
+    "decay": 28800,
+    "image": "/assets/images/building-constructs/floor-triangle-ladder-hatch.png"
+  },
+  {
+    "name": "Wood Double Door",
+    "maxHp": 200,
+    "decay": 10800,
+    "image": "/assets/images/building-constructs/door-double-hinged-wood.png"
+  },
+  {
+    "name": "Wood Shutters",
+    "maxHp": 200,
+    "decay": 10800,
+    "image": "/assets/images/building-constructs/shutter-wood-a.png"
+  },
+  {
+    "name": "Wooden Barricade",
+    "maxHp": 250,
+    "decay": 28800,
+    "image": "/assets/images/building-constructs/barricade-wood.png"
+  },
+  {
+    "name": "Wooden Barricade Cover",
+    "maxHp": 120,
+    "decay": 7200,
+    "image": "/assets/images/building-constructs/barricade-wood-cover.png"
+  },
+  {
+    "name": "Wooden Door",
+    "maxHp": 200,
+    "decay": 10800,
+    "image": "/assets/images/building-constructs/door-hinged-wood.png"
+  },
+  {
+    "name": "Wooden Window Bars",
+    "maxHp": 250,
+    "decay": 10800,
+    "image": "/assets/images/building-constructs/wall-window-bars-wood.png"
+  }
+]
