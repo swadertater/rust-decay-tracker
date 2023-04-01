@@ -87,7 +87,7 @@
     "name": "Metal Barricade",
     "maxHp": 600,
     "decay": 28800,
-    "image": "/assets/images/building-constructs
+    "image": "/assets/images/building-constructs/metal-barricade.png"
   {
     "name": "Metal Shop Front",
     "maxHp": 750,
