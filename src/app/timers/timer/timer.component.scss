@@ -1,0 +1,21 @@
+mat-form-field {
+  width: 100%;
+}
+
+.timer-icon {
+  transform: scale(1.5);
+}
+
+.countdown, .coordinates {
+  font-size: 1.75rem;
+  font-weight: 500;
+  color: dimgray;
+}
+
+textarea {
+  font-size: 1.25rem;
+}
+
+textarea:disabled {
+  color: dimgray;
+}

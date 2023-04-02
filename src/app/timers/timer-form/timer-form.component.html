@@ -1,4 +1,4 @@
-<form (submit)="onSubmit($event)" [formGroup]="form" class="container-fluid">
+<form (submit)="onSubmit()" [formGroup]="form" class="container-fluid">
   <div class="row">
     <div class="col">
       <mat-form-field>
@@ -64,19 +64,6 @@
             <img src="/assets/images/building-tiers/high-quality-metal.png" alt="Armoured Building Tier" width="32"
                  height="32">
             Armoured
-          </mat-option>
-        </mat-select>
-      </mat-form-field>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col">
-      <mat-form-field>
-        <mat-label>Building Component</mat-label>
-        <mat-select formControlName="buildingComponent">
-          <mat-option *ngFor="let option of BUILDING_COMPONENT_OPTIONS"
-                      [value]="option.value">
-            {{option.label}}
           </mat-option>
         </mat-select>
       </mat-form-field>

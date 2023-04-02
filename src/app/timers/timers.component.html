@@ -1,14 +1,12 @@
 <div class="container p-5">
   <mat-card>
     <mat-card-content>
-      <app-timer-form></app-timer-form>
+      <app-timer-form (formSubmit)="onTimerFormSubmit($event)"></app-timer-form>
     </mat-card-content>
   </mat-card>
-  <div class="d-flex justify-content-center" *ngFor="let timer of timers">
-    <span>{{timer.id}}</span>
-    <app-timer></app-timer>
-    <button color="primary" mat-icon-button (click)="deleteTimer(timer.id)">
-      <mat-icon>delete</mat-icon>
-    </button>
+  <div class="timer-grid my-4">
+    <div *ngFor="let timerConfig of timerConfigs; let i = index;">
+      <app-timer class="mat-elevation-z2" (closeClick)="deleteTimer(i)" [config]="timerConfig"></app-timer>
+    </div>
   </div>
 </div>
