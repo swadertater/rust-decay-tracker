@@ -9,29 +9,7 @@ import {TimerConfig} from "./timer/timer.component";
   styleUrls: ['./timers.component.scss']
 })
 export class TimersComponent {
-  public timerConfigs: TimerConfig[] = [
-    {
-      startTime: 100,
-      label: 'Test',
-      x: 'A',
-      y: '1',
-      notes: 'Test'
-    },
-    {
-      startTime: 200,
-      label: 'Test 2',
-      x: 'B',
-      y: '2',
-      notes: 'Test 2'
-    },
-    {
-      startTime: 300,
-      label: 'Test 3',
-      x: 'C',
-      y: '3',
-      notes: 'Test 3'
-    }
-  ];
+  public timerConfigs: TimerConfig[] = [];
 
   constructor(private decayTimeCalculatorService: DecayTimeCalculatorService) {
   }

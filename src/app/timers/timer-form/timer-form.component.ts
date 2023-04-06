@@ -25,8 +25,8 @@ export class TimerFormComponent {
 
   public form = this.fb.group({
     label: ['', Validators.required],
-    x: ['', Validators.required],
-    y: ['', Validators.required],
+    x: [''],
+    y: [''],
     health: [null, Validators.required],
     buildingTier: [null, Validators.required],
     notes: [''],
