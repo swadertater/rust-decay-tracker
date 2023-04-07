@@ -11,13 +11,8 @@ export class LocalTimerStorageService {
   public getTimers(): TimerConfig[] {
     const timerConfigsJson = localStorage.getItem('timers');
     if (timerConfigsJson) {
-      const savedTimers = JSON.parse(timerConfigsJson);
-      const savedTimersIsArray = Array.isArray(savedTimers);
-      if (!savedTimersIsArray) {
-        return [];
-      }
-      const savedTimersAreValid = savedTimers.every((timerConfig: any) => this.validateTimerConfig(timerConfig));
-
+      const savedTimerConfigs = JSON.parse(timerConfigsJson);
+      const savedTimersAreValid = this.validateTimerConfigs(savedTimerConfigs)
       if (!savedTimersAreValid) {
         this.clearTimers();
         return [];
@@ -43,6 +38,13 @@ export class LocalTimerStorageService {
     localStorage.removeItem('timers');
   }
 
+  private validateTimerConfigs(timerConfigs: any[]): boolean {
+    if (!timerConfigs || !Array.isArray(timerConfigs)) {
+      return false;
+    }
+    return timerConfigs.every((timerConfig: any) => this.validateTimerConfig(timerConfig));
+  }
+
   private validateTimerConfig(timerConfig: any): boolean {
     if (!timerConfig || typeof timerConfig !== 'object') {
       return false;
@@ -64,5 +66,6 @@ export class LocalTimerStorageService {
     }
     return true;
   }
+
 
 }
