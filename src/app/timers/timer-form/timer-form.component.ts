@@ -21,12 +21,12 @@ export interface TimerFormValue {
   styleUrls: ['./timer-form.component.scss']
 })
 export class TimerFormComponent {
-@Output() formSubmit = new EventEmitter<TimerFormValue>();
+  @Output() formSubmit = new EventEmitter<TimerFormValue>();
 
   public form = this.fb.group({
     label: ['', Validators.required],
-    x: ['', Validators.required],
-    y: ['', Validators.required],
+    x: [''],
+    y: [''],
     health: [null, Validators.required],
     buildingTier: [null, Validators.required],
     notes: [''],
