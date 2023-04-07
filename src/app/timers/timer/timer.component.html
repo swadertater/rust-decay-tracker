@@ -11,8 +11,11 @@
   </mat-card-header>
   <div class="container-fluid">
     <div class="row">
-      <div class="col countdown">
+      <div class="col-sm countdown">
         {{countdown}}
+      </div>
+      <div class="col-sm countdown text-start text-sm-end">
+        ~ {{approximateDecayTime | date:'h:mm a'}}
       </div>
     </div>
     <div class="row">
@@ -21,7 +24,7 @@
         {{config.y}}
       </div>
     </div>
-    <div class="row">
+    <div class="row" *ngIf="!!config.notes">
       <div class="col">
         <mat-form-field>
           <textarea [value]="config.notes" disabled matInput></textarea>

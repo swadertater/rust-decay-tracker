@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {BuildingTier, Time} from "./types";
+import {BuildingTier} from "../types";
 
 @Injectable({
   providedIn: 'root'
@@ -22,11 +22,10 @@ export class DecayTimeCalculatorService {
     [BuildingTier.Armoured, 43200]
   ]);
 
-  calculateBuildingComponentDecayTimeInSeconds(health: number, buildingTier: BuildingTier): number  {
+  public calculateBuildingComponentDecayTimeInSeconds(health: number, buildingTier: BuildingTier): number  {
       const maxHealth = this.buildingTierMaxHealthMap.get(buildingTier);
       const decayTimeInSeconds = this.buildingTierDecayTimeInSecondsMap.get(buildingTier);
       const decayTimePerHealth = decayTimeInSeconds / maxHealth;
       return decayTimePerHealth * health;
     }
-
 }

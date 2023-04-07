@@ -14,6 +14,7 @@ export class TimerComponent implements OnInit, OnDestroy {
 
   public countdown: string;
   public timerSubscription: Subscription;
+  public approximateDecayTime: Date;
 
   ngOnInit(): void {
     this.timerSubscription = interval(1000)
@@ -24,6 +25,9 @@ export class TimerComponent implements OnInit, OnDestroy {
       .subscribe(currentTime => {
         this.updateCountdown(currentTime);
       });
+
+    const approximateDecayTimeInSeconds = new Date().getTime() + (this.config.startTime * 1000);
+    this.approximateDecayTime = new Date(approximateDecayTimeInSeconds);
   }
 
   ngOnDestroy(): void {
