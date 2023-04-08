@@ -22,8 +22,8 @@ FROM nginx:1.23.3
 # Step 8: Copy the build output to Nginx's default directory
 COPY --from=build /app/dist/rust-decay-tracker /usr/share/nginx/html
 
-# Step 9: Copy the web.config file to Nginx's default directory
-COPY nginx-web.config /etc/nginx/conf.d/default.conf
+# Step 9: Copy the nginx.conf file to Nginx's default directory
+COPY ./nginx.conf /etc/nginx/conf.d/default.conf
 
 # Step 10: Expose the default Nginx port
 EXPOSE 80
