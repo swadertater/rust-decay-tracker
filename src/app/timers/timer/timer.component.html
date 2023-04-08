@@ -1,8 +1,9 @@
 <mat-card>
   <mat-card-header>
     <div class="d-flex justify-content-between w-100">
-      <h2>
-        <mat-icon class="timer-icon me-2" color="accent">alarm</mat-icon>
+      <div></div>
+      <h2 class="pt-3">
+        <mat-icon [ngClass]="{blink: timerExpired$ | async}" class="timer-icon me-2" color="accent">alarm</mat-icon>
         {{config.label}}</h2>
       <button (click)="onCloseClick()" color="warn" mat-icon-button>
         <mat-icon>close</mat-icon>
@@ -11,8 +12,11 @@
   </mat-card-header>
   <div class="container-fluid">
     <div class="row">
-      <div class="col countdown">
-        {{countdown}}
+      <div [ngClass]="{blink: timerExpired$ | async}" class="col-sm countdown">
+        {{countdownDisplay$ | async}}
+      </div>
+      <div class="col-sm countdown text-start text-sm-end">
+        ~ {{approximateDecayTime | date:'h:mm a'}}
       </div>
     </div>
     <div class="row">
@@ -21,7 +25,7 @@
         {{config.y}}
       </div>
     </div>
-    <div class="row">
+    <div class="row" *ngIf="!!config.notes">
       <div class="col">
         <mat-form-field>
           <textarea [value]="config.notes" disabled matInput></textarea>
