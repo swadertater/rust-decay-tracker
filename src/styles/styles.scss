@@ -53,4 +53,22 @@ body {
   background: mat.get-color-from-palette($rust-decay-tracker-theme, 'ligher');
 }
 
+.blink {
+  animation-name: blink-animation;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes blink-animation {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
 

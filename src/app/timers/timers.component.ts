@@ -24,7 +24,8 @@ export class TimersComponent {
 
   public onTimerFormSubmit(value: TimerFormValue): void {
     const timerConfig: TimerConfig = {
-      startTime: this.decayTimeCalculatorService.calculateBuildingComponentDecayTimeInSeconds(value.health, value.buildingTier),
+      decayTime: this.decayTimeCalculatorService.calculateBuildingComponentDecayTime(value.health, value.buildingTier),
+      startTime: Date.now(),
       label: value.label,
       x: value.x,
       y: value.y,
