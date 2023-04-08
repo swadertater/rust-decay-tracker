@@ -3,7 +3,7 @@
     <div class="d-flex justify-content-between w-100">
       <div></div>
       <h2 class="pt-3">
-        <mat-icon [ngClass]="{blink: timerExpired}" class="timer-icon me-2" color="accent">alarm</mat-icon>
+        <mat-icon [ngClass]="{blink: timerExpired$ | async}" class="timer-icon me-2" color="accent">alarm</mat-icon>
         {{config.label}}</h2>
       <button (click)="onCloseClick()" color="warn" mat-icon-button>
         <mat-icon>close</mat-icon>
@@ -12,7 +12,7 @@
   </mat-card-header>
   <div class="container-fluid">
     <div class="row">
-      <div [ngClass]="{blink: timerExpired}" class="col-sm countdown">
+      <div [ngClass]="{blink: timerExpired$ | async}" class="col-sm countdown">
         {{countdownDisplay$ | async}}
       </div>
       <div class="col-sm countdown text-start text-sm-end">

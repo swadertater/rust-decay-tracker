@@ -10,15 +10,12 @@ import {CleanupComponent} from "../../shared/extensions/classes/disposable";
 })
 export class TimerComponent extends CleanupComponent implements OnInit, OnDestroy {
   @Input() config: TimerConfig;
-
   @Output() closeClick = new EventEmitter();
 
-  private elapsedSeconds$: Observable<number>;
-  public countdownDisplay$: Observable<string>;
   public countdown$: Observable<number>;
 
-  public timerExpired: boolean;
-  public timerSubscription: Subscription;
+  public countdownDisplay$: Observable<string>;
+  public timerExpired$: Observable<boolean>;
   public approximateDecayTime: Date;
 
   constructor() {
@@ -27,20 +24,21 @@ export class TimerComponent extends CleanupComponent implements OnInit, OnDestro
 
   ngOnInit(): void {
     const elapsedSecondsStart = Math.floor(((new Date().getTime()) - this.config.startTime) / 1000);
-    this.elapsedSeconds$ = interval(1000).pipe(map((n) => n + elapsedSecondsStart));
+    const elapsedSeconds$ = interval(1000).pipe(map((n) => n + elapsedSecondsStart));
 
-    this.elapsedSeconds$.pipe(takeUntil(this.destroy$)).subscribe((n) => {
-      const countdown = this.config.decayTime - (n * 1000);
-    });
-
-    this.countdown$ = this.elapsedSeconds$.pipe(
+    this.countdown$ = elapsedSeconds$.pipe(
       takeUntil(this.destroy$),
-      map((n) => this.config.decayTime - (n * 1000)),
+      map((elapsedSeconds) => this.config.decayTime - (elapsedSeconds * 1000)),
     );
 
     this.countdownDisplay$ = this.countdown$.pipe(
       takeUntil(this.destroy$),
       map((time) => this.convertTimeToString(time))
+    );
+
+    this.timerExpired$ = this.countdown$.pipe(
+      takeUntil(this.destroy$),
+      map((time) => time <= 0)
     );
 
     this.approximateDecayTime = new Date(this.config.startTime + this.config.decayTime);
