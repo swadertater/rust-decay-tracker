@@ -23,7 +23,6 @@ export class LocalTimerStorageService {
   }
 
   public saveTimer(timer: TimerConfig): void {
-    console.log('Saving timer: ', timer);
     const savedTimers = this.getTimers();
     savedTimers.push(timer);
     localStorage.setItem('timers', JSON.stringify(savedTimers));
